@@ -1,0 +1,403 @@
+body {
+    text-align: center;
+    background: linear-gradient(135deg, #000, #000, #000000);
+}
+
+.container-fluid {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: relative;
+    margin: 30px auto;
+    color: rgb(255, 255, 255);
+}
+
+.container .label {
+    font-size: 15px;
+    padding-left: 10px;
+    position: absolute;
+    top: 13px;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.input {
+    width: 200px;
+    height: 45px;
+    border: none;
+    outline: none;
+    padding: 0px 7px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 15px;
+    background-color: rgb(160, 149, 149);
+    box-shadow: 3px 3px 10px rgb(255, 254, 254),
+        -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.input:focus {
+    border: 2px solid transparent;
+    color: #fff;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4),
+        inset 3px 3px 10px rgba(0, 0, 0, 1),
+        inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.container .input:valid~.label,
+.container .input:focus~.label {
+    transition: 0.3s;
+    padding-left: 2px;
+    transform: translateY(-35px);
+}
+
+.container .input:valid,
+.container .input:focus {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4),
+        inset 3px 3px 10px rgba(0, 0, 0, 1),
+        inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.form-toggle {
+    margin-bottom: 20px;
+}
+
+form {
+    display: none;
+    text-align: left;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.card {
+    margin: 20px auto; /* Center the card horizontally */
+    text-align: center; /* Center-align text content within the card */
+    display: flex; /* Use flexbox to center-align children */
+    flex-direction: column; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    position: relative;
+    background-color: #000;
+    border-radius: 8px;
+    cursor: pointer;
+    gap: 12px;
+    padding: 12px;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -5px;
+    margin: auto;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+    z-index: -10;
+    pointer-events: none;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(1.07);
+}
+
+.card::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+    transform: translate3d(0, 0, 0) scale(1.1);
+    filter: blur(20px);
+}
+
+.heading {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.card p:not(.heading) {
+    font-size: 14px;
+}
+
+.card p:last-child {
+    color: #e81cff;
+    font-weight: 600;
+}
+
+.card:hover::after {
+    filter: blur(30px);
+}
+
+.card:hover::before {
+    transform: rotate(-180deg) scaleX(1.07) scaleY(1.07);
+    transition-duration: 1.5s;
+}
+
+
+.btntop {
+    /* padding: 5px 10px; */
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    position: relative;
+    border: navajowhite;
+    background-color: #222;
+    color: aliceblue;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: 2px 2px 2px red;
+}
+
+.btntop::before {
+    content: '';
+    height: 10px;
+    width: 30px;
+    position: absolute;
+    background-image: linear-gradient(45deg, salmon, red);
+    left: -10px;
+    top: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.btntop:hover::before {
+    height: 100px;
+    width: 100px;
+}
+
+.btntop:hover {
+    border-radius: 5px;
+}
+
+
+.btntop1 {
+    /* padding: 5px 10px; */
+    padding: 0 10px;
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    position: relative;
+    border: navajowhite;
+    background-color: #ff0000;
+    color: rgb(0, 0, 0);
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: 2px 2px 2px rgb(255, 255, 255);
+}
+
+.btntop1::before {
+    content: '';
+    height: 10px;
+    width: 30px;
+    position: absolute;
+    background-image: linear-gradient(45deg, rgb(126, 118, 118), rgb(255, 255, 255));
+    left: -10px;
+    top: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+}
+
+.btntop1:hover::before {
+    height: 100px;
+    width: 100px;
+}
+
+.btntop1:hover {
+    border-radius: 5px;
+}
+body {
+    text-align: center; /* Center-align text in the body */
+    background-color: #f4f4f4;
+    margin: 0; /* Remove default margin to center the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Center the container vertically */
+}
+
+.container-fluid {
+    max-width: 400px;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center-align text in the container */
+}
+
+/* Other styles for your elements */
+
+.card {
+    margin: 20px auto; /* Center the card horizontally */
+    /* Other styles for your card */
+}
+
+.btntop{
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    margin-right: 10px; /* Add right margin to create a gap between buttons */
+    position: relative;
+    border: navajowhite;
+    background-color: #222;
+    color: aliceblue;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: 2px 2px 2px red;
+}
+.btntop1 {
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    margin-right: 10px; /* Add right margin to create a gap between buttons */
+    position: relative;
+    border: rgb(255, 255, 255);
+    background-color: #ff0000;
+    color: rgb(0, 0, 0);
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: 2px 2px 2px rgb(255, 255, 255);
+}
+
+.btntop:last-child,
+.btntop1:last-child {
+    margin-right: 0; /* Remove margin from the last button to avoid extra space */
+}
+
+
+.button1 {
+    height: 50px;
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .button1:hover {
+    box-shadow: .5px .5px 150px #252525;
+  }
+  
+  .type1::after {
+    content: "Thanks";
+    height: 50px;
+    width: 150px;
+    background-color: #008080;
+    color: #fff;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translateY(50px);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .type1::before {
+    content: "Sign In";
+    height: 50px;
+    width: 150px;
+    background-color: #fff;
+    color: #008080;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translateY(0px) scale(1.2);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .type1:hover::after {
+    transform: translateY(0) scale(1.2);
+  }
+  
+  .type1:hover::before {
+    transform: translateY(-50px) scale(0) rotate(120deg);
+  }
+
+  .button2 {
+    height: 50px;
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .button2:hover {
+    box-shadow: .5px .5px 150px #252525;
+  }
+  
+  .type2::after {
+    content: "Thanks";
+    height: 50px;
+    width: 150px;
+    background-color: #008080;
+    color: #fff;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translateY(50px);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .type2::before {
+    content: "Sign Up";
+    height: 50px;
+    width: 150px;
+    background-color: #fff;
+    color: #008080;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translateY(0px) scale(1.2);
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .type2:hover::after {
+    transform: translateY(0) scale(1.2);
+  }
+  
+  .type2:hover::before {
+    transform: translateY(-50px) scale(0) rotate(120deg);
+  }
